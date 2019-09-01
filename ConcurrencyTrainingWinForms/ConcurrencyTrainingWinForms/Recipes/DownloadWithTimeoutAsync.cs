@@ -16,16 +16,23 @@ namespace ConcurrencyTrainingWinForms.Recipes
 
         private async void BtnDownloadContent_Click(object sender, EventArgs e)
         {
-            string result = await DownloadStringWithTimeoutAsync("http://softsystem.pl", int.Parse(textBoxTimeoutInMs.Text));
-            if (result != null)
+            try
             {
-                contentRichTextBox.Text = result;
-                lblStatus.Text = "Downloaded successfully";
+                string result = await DownloadStringWithTimeoutAsync(textBoxUrl.Text, int.Parse(textBoxTimeoutInMs.Text));
+                if (result != null)
+                {
+                    contentRichTextBox.Text = result;
+                    lblStatus.Text = "Downloaded successfully";
+                }
+                else
+                {
+                    lblStatus.Text = "Timeout occured";
+                    MessageBox.Show("Timeout occured!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblStatus.Text = "Timeout occured";
-                MessageBox.Show("Timeout occured!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Exception occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

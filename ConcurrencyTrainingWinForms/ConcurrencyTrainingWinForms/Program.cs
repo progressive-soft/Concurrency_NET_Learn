@@ -19,10 +19,10 @@ namespace ConcurrencyTrainingWinForms
             //Application.Run(new DeadlockExample());
             //Application.Run(new CallingAsyncMethodsFromSyncCode());
             //Application.Run(new DownloadWithRetriesAsync());
-            //Application.Run(new DownloadWithTimeoutAsync());
+            Application.Run(new DownloadWithTimeoutAsync());
             //Application.Run(new ProgressReporting());
             //Application.Run(new DownloadAllAsync());
-            Application.Run(new DownloadAllAsyncWithProgress());
+            //Application.Run(new DownloadAllAsyncWithProgress());
         }
     }
 }

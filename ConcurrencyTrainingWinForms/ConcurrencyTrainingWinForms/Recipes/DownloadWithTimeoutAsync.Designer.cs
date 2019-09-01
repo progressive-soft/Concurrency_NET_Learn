@@ -33,6 +33,8 @@
             this.btnDownloadContent = new System.Windows.Forms.Button();
             this.lblTimeout = new System.Windows.Forms.Label();
             this.textBoxTimeoutInMs = new System.Windows.Forms.TextBox();
+            this.textBoxUrl = new System.Windows.Forms.TextBox();
+            this.lblUrl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -65,7 +67,7 @@
             // lblTimeout
             // 
             this.lblTimeout.AutoSize = true;
-            this.lblTimeout.Location = new System.Drawing.Point(13, 385);
+            this.lblTimeout.Location = new System.Drawing.Point(13, 407);
             this.lblTimeout.Name = "lblTimeout";
             this.lblTimeout.Size = new System.Drawing.Size(67, 13);
             this.lblTimeout.TabIndex = 11;
@@ -73,16 +75,35 @@
             // 
             // textBoxTimeoutInMs
             // 
-            this.textBoxTimeoutInMs.Location = new System.Drawing.Point(98, 382);
+            this.textBoxTimeoutInMs.Location = new System.Drawing.Point(98, 404);
             this.textBoxTimeoutInMs.Name = "textBoxTimeoutInMs";
             this.textBoxTimeoutInMs.Size = new System.Drawing.Size(100, 20);
             this.textBoxTimeoutInMs.TabIndex = 12;
+            // 
+            // textBoxUrl
+            // 
+            this.textBoxUrl.Location = new System.Drawing.Point(98, 376);
+            this.textBoxUrl.Name = "textBoxUrl";
+            this.textBoxUrl.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUrl.TabIndex = 14;
+            this.textBoxUrl.Text = "http://github.com";
+            // 
+            // lblUrl
+            // 
+            this.lblUrl.AutoSize = true;
+            this.lblUrl.Location = new System.Drawing.Point(13, 379);
+            this.lblUrl.Name = "lblUrl";
+            this.lblUrl.Size = new System.Drawing.Size(20, 13);
+            this.lblUrl.TabIndex = 13;
+            this.lblUrl.Text = "Url";
             // 
             // DownloadWithTimeoutAsync
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 550);
+            this.Controls.Add(this.textBoxUrl);
+            this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.textBoxTimeoutInMs);
             this.Controls.Add(this.lblTimeout);
             this.Controls.Add(this.lblStatus);
@@ -103,5 +124,7 @@
         private System.Windows.Forms.Button btnDownloadContent;
         private System.Windows.Forms.Label lblTimeout;
         private System.Windows.Forms.TextBox textBoxTimeoutInMs;
+        private System.Windows.Forms.TextBox textBoxUrl;
+        private System.Windows.Forms.Label lblUrl;
     }
 }
