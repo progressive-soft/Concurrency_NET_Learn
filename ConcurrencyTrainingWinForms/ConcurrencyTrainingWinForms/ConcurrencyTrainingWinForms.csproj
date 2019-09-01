@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C111EF5-B3B6-4C71-B1EF-B287EB68115D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ConcurrencyTrainingWinForms</RootNamespace>
+    <AssemblyName>ConcurrencyTrainingWinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CallingAsyncMethodsFromSyncCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallingAsyncMethodsFromSyncCode.Designer.cs">
+      <DependentUpon>CallingAsyncMethodsFromSyncCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeadlockExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeadlockExample.Designer.cs">
+      <DependentUpon>DeadlockExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes\DownloadAllAsync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes\DownloadAllAsync.Designer.cs">
+      <DependentUpon>DownloadAllAsync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipes\DownloadAllAsyncWithProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes\DownloadAllAsyncWithProgress.Designer.cs">
+      <DependentUpon>DownloadAllAsyncWithProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipes\DownloadWithRetriesAsync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes\DownloadWithRetriesAsync.Designer.cs">
+      <DependentUpon>DownloadWithRetriesAsync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipes\DownloadWithTimeoutAsync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes\DownloadWithTimeoutAsync.Designer.cs">
+      <DependentUpon>DownloadWithTimeoutAsync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recipes\ProgressReporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recipes\ProgressReporting.Designer.cs">
+      <DependentUpon>ProgressReporting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CallingAsyncMethodsFromSyncCode.resx">
+      <DependentUpon>CallingAsyncMethodsFromSyncCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeadlockExample.resx">
+      <DependentUpon>DeadlockExample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Recipes\DownloadAllAsync.resx">
+      <DependentUpon>DownloadAllAsync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipes\DownloadAllAsyncWithProgress.resx">
+      <DependentUpon>DownloadAllAsyncWithProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipes\DownloadWithRetriesAsync.resx">
+      <DependentUpon>DownloadWithRetriesAsync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipes\DownloadWithTimeoutAsync.resx">
+      <DependentUpon>DownloadWithTimeoutAsync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recipes\ProgressReporting.resx">
+      <DependentUpon>ProgressReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
